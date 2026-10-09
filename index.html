@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Feliz Día de las Flores Moradas</title>
+<style>
+:root{--bg:#e9d8fb;--bg2:#c9a6ee;--ink:#4a2a78;--card:#fff;--deep:#5b2f9e;color-scheme:light dark;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);box-sizing:border-box}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#e9d8fb;--bg2:#c9a6ee;--ink:#4a2a78}}
+:root[data-theme="dark"]{--bg:#e9d8fb;--bg2:#c9a6ee;--ink:#4a2a78}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;height:100%;overflow:hidden;font-family:"Quicksand","Trebuchet MS",sans-serif;background:var(--bg);color:var(--ink);text-align:center}
+.bg{position:fixed;inset:0;background:radial-gradient(circle at 20% 15%,#fff8 0,#fff0 40%),radial-gradient(circle at 80% 60%,#fff6 0,#fff0 45%),linear-gradient(var(--bg),var(--bg2))}
+#intro{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;background:linear-gradient(#3b2a8f,#6a46c2);color:#fff;z-index:5;transition:opacity .6s}
+#intro h2{margin:0 24px;font-size:22px}
+#intro button{font:700 22px inherit;font-family:inherit;padding:18px 34px;border:0;border-radius:18px;background:#fff;color:var(--deep);cursor:pointer;box-shadow:0 8px 24px #0004}
+#intro button:focus-visible,.card:focus-visible,#close:focus-visible{outline:3px solid #fff;outline-offset:3px}
+main{position:relative;height:100%;max-width:480px;margin:0 auto;padding:28px 22px 0}
+h1{margin:0 0 10px;font-size:30px;line-height:1.1;color:#6b3fb0;font-family:"Georgia",serif}
+p.msg{margin:0 auto;max-width:300px;font-weight:600;font-size:15px;line-height:1.4}
+#stage{position:absolute;left:0;right:0;bottom:0;height:62%}
+svg#bouquet{position:absolute;left:50%;bottom:0;width:78%;max-width:340px;transform:translateX(-50%) scale(.45);transform-origin:50% 100%;transition:transform 1.4s cubic-bezier(.2,.9,.3,1)}
+.grown svg#bouquet{transform:translateX(-50%) scale(1)}
+.card{position:absolute;left:50%;bottom:36%;width:78px;height:96px;margin-left:-39px;border:5px solid #fff;border-bottom-width:14px;border-radius:4px;box-shadow:0 4px 12px #0003;cursor:pointer;opacity:0;transform:translate(0,40px) scale(.3);transition:transform .9s cubic-bezier(.2,.9,.3,1),opacity .5s;display:flex;align-items:center;justify-content:center;font-size:34px}
+.grown .card{opacity:1}
+#c1{background:linear-gradient(135deg,#b78ae6,#7a4bc4)}#c2{background:linear-gradient(135deg,#f3d1ff,#c79df0)}#c3{background:linear-gradient(135deg,#8f6bd8,#4a2f92)}#c4{background:linear-gradient(135deg,#e6c2ff,#a97be0)}
+.grown #c1{transform:translate(-120px,-20px) rotate(-14deg)}
+.grown #c2{transform:translate(-40px,-70px) rotate(-4deg)}
+.grown #c3{transform:translate(48px,-60px) rotate(8deg)}
+.grown #c4{transform:translate(118px,-8px) rotate(15deg)}
+.card:hover{z-index:3}
+#modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:#2a1a4a99;z-index:8;padding:24px}
+#modal.on{display:flex}
+.box{position:relative;width:100%;max-width:320px;background:linear-gradient(#7b4fc9,#4b2b8a);color:#fff;border-radius:18px;padding:34px 22px 22px;box-shadow:0 14px 40px #0008;animation:pop .35s}
+.box .big{font-size:64px;line-height:1}
+.box p{margin:14px 0 0;font-size:15px;line-height:1.45;font-weight:600}
+#close{position:absolute;top:8px;right:8px;width:36px;height:36px;border:0;border-radius:50%;background:#fff3;color:#fff;font-size:20px;cursor:pointer}
+@keyframes pop{from{transform:scale(.6);opacity:0}}
+.heart{position:fixed;font-size:20px;pointer-events:none;animation:up 2.4s forwards;z-index:9}
+@keyframes up{to{transform:translateY(-160px);opacity:0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+
+<div id="intro">
+  <h2>Feliz Día de las Flores Moradas, amiga 💜</h2>
+  <button id="start">Toca aquí, amiga</button>
+</div>
+
+<main>
+  <h1>Feliz Día de las<br>Flores Moradas 💜</h1>
+  <p class="msg">Para ti, mi amiga querida: las flores moradas se parecen a ti, únicas, delicadas y hermosas. Gracias por estar siempre. Te quiero mucho.</p>
+
+  <div id="stage">
+    <svg id="bouquet" viewBox="0 0 300 380" aria-label="Ramo de tulipanes morados">
+      <g stroke="#2f8f3a" stroke-width="7" stroke-linecap="round" fill="none">
+        <path d="M150 370 L80 150"/><path d="M150 370 L150 120"/><path d="M150 370 L222 150"/><path d="M150 370 L112 170"/><path d="M150 370 L190 175"/>
+      </g>
+      <g fill="#8f58d6" stroke="#5b2f9e" stroke-width="3">
+        <path d="M58 150 Q55 100 80 85 Q105 100 102 150 Q80 165 58 150Z"/>
+        <path d="M128 118 Q124 62 150 46 Q176 62 172 118 Q150 134 128 118Z"/>
+        <path d="M200 150 Q197 100 222 85 Q247 100 244 150 Q222 165 200 150Z"/>
+        <path d="M92 172 Q90 128 112 114 Q134 128 132 172 Q112 186 92 172Z" fill="#a574e6"/>
+        <path d="M170 176 Q168 132 190 118 Q212 132 210 176 Q190 190 170 176Z" fill="#a574e6"/>
+      </g>
+      <path d="M95 300 Q150 250 205 300 L186 372 L114 372Z" fill="#f2c7a0" stroke="#d9a070" stroke-width="3"/>
+      <g fill="#3da24a"><ellipse cx="85" cy="350" rx="62" ry="26"/><ellipse cx="215" cy="350" rx="62" ry="26"/><ellipse cx="150" cy="365" rx="70" ry="20"/></g>
+      <path d="M135 320 Q150 305 165 320 Q150 335 135 320Z" fill="#e89a6a"/>
+    </svg>
+    <div class="card" id="c1" tabindex="0" role="button" aria-label="Foto 1">🌷</div>
+    <div class="card" id="c2" tabindex="0" role="button" aria-label="Foto 2">💐</div>
+    <div class="card" id="c3" tabindex="0" role="button" aria-label="Foto 3">🦋</div>
+    <div class="card" id="c4" tabindex="0" role="button" aria-label="Foto 4">🌸</div>
+  </div>
+</main>
+
+<div id="modal" role="dialog" aria-modal="true">
+  <div class="box">
+    <button id="close" aria-label="Cerrar">×</button>
+    <div class="big">🎁</div>
+    <p id="mtext"></p>
+  </div>
+</div>
+
+<script>
+// Personaliza aquí los textos de cada tarjeta
+var notas={c1:"Contigo hasta los días grises se vuelven morados. 💜",c2:"Un ramo no alcanza para decirte cuánto vales para mí. 💐",c3:"Contigo todo es más bonito, más divertido y más ligero. 🦋",c4:"Gracias por ser tan tú. Eres la mejor amiga. 🌸"};
+var cajita="Una cajita morada solo para ti, con florecitas de violeta y todo mi cariño de amiga. Porque eres única.";
+var $=function(i){return document.getElementById(i)};
+function hearts(x,y){for(var i=0;i<6;i++){var h=document.createElement('div');h.className='heart';h.textContent='💜';h.style.left=(x-10+Math.random()*40-20)+'px';h.style.top=(y-10)+'px';document.body.appendChild(h);setTimeout(function(e){e.remove()},2500,h)}}
+function open(t){$('mtext').textContent=t;$('modal').classList.add('on');$('close').focus()}
+$('start').onclick=function(e){hearts(e.clientX,e.clientY);$('intro').style.opacity=0;setTimeout(function(){$('intro').style.display='none';document.body.classList.add('grown')},500)};
+$('bouquet').onclick=function(e){hearts(e.clientX,e.clientY);open(cajita)};
+['c1','c2','c3','c4'].forEach(function(id){var el=$(id);var f=function(e){e.stopPropagation();open(notas[id])};el.onclick=f;el.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();f(e)}}});
+$('close').onclick=function(){$('modal').classList.remove('on')};
+$('modal').onclick=function(e){if(e.target===this)this.classList.remove('on')};
+</script>
+</body>
+</html>
